@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: aircraft_tracker
+      POSTGRES_USER: tracker
+      POSTGRES_PASSWORD: tracker_password
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tracker -d aircraft_tracker"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - aircraft_tracker_data:/var/lib/postgresql/data
+
+volumes:
+  aircraft_tracker_data:
+
