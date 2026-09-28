@@ -17,4 +17,3 @@ services:
 
 volumes:
   aircraft_tracker_data:
-

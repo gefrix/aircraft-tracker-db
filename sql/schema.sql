@@ -29,4 +29,3 @@ CREATE TABLE IF NOT EXISTS aeroplanes (
 CREATE INDEX IF NOT EXISTS idx_aeroplanes_velocity ON aeroplanes (velocity);
 CREATE INDEX IF NOT EXISTS idx_aeroplanes_callsign_lower ON aeroplanes (LOWER(callsign));
 CREATE INDEX IF NOT EXISTS idx_aeroplanes_origin_country ON aeroplanes (origin_country);
-
